@@ -1,14 +1,22 @@
-.btn {
+.dropdown-split-left, 
+.dropdown-split-left:hover {
   border: 1px solid var(--light-txt-color);
+  color: var(--main-txt-color);
   border-radius: 0;
   font-size: 18px;
+  background-color: transparent;
+  width: 200px;
 }
 
 .btn-select {
   width: 250px;
 }
 
-.btn-split {
+.dropdown-split-right,
+.dropdown-split-right:hover,
+.dropdown-split-right:focus-within {
   background-color: var(--main-bg-color);
   color: white;
+  border: 1px solid var(--light-txt-color);
+  border-radius: 0;
 }

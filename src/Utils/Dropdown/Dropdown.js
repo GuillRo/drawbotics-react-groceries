@@ -1,29 +1,23 @@
 import React from 'react'
+import { ButtonToolbar, Dropdown, Button, ButtonGroup } from 'react-bootstrap'
+
 
 import style from './Dropdown.module.css'
 
-const Dropdown = () => {
-
-
+const DropdownMenu = () => {
   return (
-    <div className="btn-group" >
-      {/* style="width: 200px;" onContextMenu="return false;" */}
-      <button id="dropdown-lists-selection" className={style.btn + ' ' + style['btn-select']} type="button">
-        All
-      </button>
-      <button
-        type="btn"
-        className={style.btn + ' ' + style['btn-split'] + "dropdown-toggle dropdown-toggle-split"}
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false">
-        <span className="sr-only">Toggle Dropdown</span>
-      </button>
-      <div id="dropdown-lists" className="dropdown-menu dropdown-menu-right" >
-        {/* style="width: 100%;" */}
-      </div>
-    </div>
+    <ButtonToolbar>
+      <Dropdown as={ButtonGroup}>
+        <Button className = {style['dropdown-split-left']} variant="">All</Button>
+        <Dropdown.Toggle className={style['dropdown-split-right']} variant="" split id="dropdown-custom-2" />
+        <Dropdown.Menu>
+          <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+          <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+          <Dropdown.Item eventKey="3">Active Item</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    </ButtonToolbar>
   )
 }
 
-export default Dropdown
+export default DropdownMenu

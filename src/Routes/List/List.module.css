@@ -2,7 +2,7 @@
   height: 500px;
   padding: 0 50px;
   overflow: auto;
-  text-align: center
+  /* text-align: center */
 }
 
 
@@ -13,4 +13,33 @@
   justify-content: space-around;
   padding: 40px;
   font-size: 22px;
+}
+
+.List .add-list-button,
+.List .add-list-button:hover {
+  color: var(--main-txt-color);
+}
+
+.List .completed {
+  margin: 10px 0;
+}
+
+.List .btn-completed {
+  color: var(--main-txt-color);
+}
+
+.List .btn-completed i {
+  margin: 0 6px;
+}
+
+.List .input-item{
+  text-align: center;
+}
+
+.List .input-item input{
+ /* height: 50px; */
+ font-size: 18px;
+ text-align: center;
+ width: 100%;
+ border: 1px dashed var(--main-txt-color);
 }

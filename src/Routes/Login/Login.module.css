@@ -1,0 +1,13 @@
+.Login {
+  text-align: center;
+  margin: 100px 0;
+}
+
+.Login input {
+  margin: 8px 0;
+}
+
+.Login .btn {
+  color: var(--main-txt-color);
+  margin:0 15px;
+}

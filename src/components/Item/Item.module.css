@@ -1,0 +1,17 @@
+.item {
+  border: 1px solid var(--main-txt-color);
+  margin: 5px 0;
+  color: var(--main-txt-color0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item p {
+  margin: 0;
+  padding: 5px;
+}
+
+.item input {
+  margin: 5px;
+}

@@ -8,19 +8,19 @@ const Footer = () => {
     <footer className={style.Footer}>
       <ul>
         <li>
-          <ButtonLink>
+          <ButtonLink link="/">
             <i className="fas fa-list-ul"></i>
             <p>List</p>
           </ButtonLink>
         </li>
         <li>
-          <ButtonLink>
+          <ButtonLink link="/">
             <i className="fas fa-chart-pie"></i>
             <p>Stats</p>
           </ButtonLink>
         </li>
         <li>
-        <ButtonLink>
+        <ButtonLink link="/">
         <i className="fas fa-utensils"></i>
             <p>Recipes</p>
         </ButtonLink>

@@ -1,4 +1,5 @@
-.ButtonLink {
-  background: none;
+.ButtonLink, .ButtonLink:hover {
+  background: inherit;
   border: none;
+  text-decoration: none;
 }

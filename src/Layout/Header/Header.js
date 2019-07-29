@@ -11,7 +11,7 @@ const Header = () => {
         <p className={style['title-big']}>GROCERIES APP</p>
       </div>
       <div>
-        <ButtonLink customClass={style['title-big']}>Logout</ButtonLink>
+        <ButtonLink customClass={style['title-big']} link="/login">Login</ButtonLink>
       </div>
     </header>
   )

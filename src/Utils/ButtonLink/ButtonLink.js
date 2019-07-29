@@ -1,12 +1,18 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import style from './ButtonLink.module.css'
 
 const ButtonLink = (props) => {
+
   const className = props.customClass ? style.ButtonLink + ' ' + props.customClass : style.ButtonLink
 
   return (
-    <button className={className}>{props.children}</button>
+    <NavLink
+      className={className}
+      to={props.link}>
+      {props.children}
+    </NavLink>
   )
 }
 

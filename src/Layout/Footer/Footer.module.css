@@ -1,0 +1,29 @@
+.Footer {
+  background-color: var(--main-bg-color);
+  padding: 25px 25px 0 25px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.Footer ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer ul li {
+  list-style: none;
+  text-align: center;
+}
+
+.Footer ul li i {
+  font-size: 25px;
+  color: white;
+}
+
+.Footer ul li p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}

@@ -5,9 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --main-bg-color: rgb(130, 206, 219);
+  --main-txt-color: rgb(92, 97, 97);
+  --light-txt-color: rgb(145, 153, 153);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.link-nostyle,
+.link-nostyle:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+.text-linethrough {
+  text-decoration: line-through;
 }

@@ -2,10 +2,11 @@
   height: 500px;
   padding: 0 50px;
   overflow: auto;
+  text-align: center
 }
 
 
-.List .lists {
+.List .nav {
   display: flex;
   color: var(--main-txt-color);
   align-items: center;

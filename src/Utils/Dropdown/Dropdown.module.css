@@ -1,0 +1,14 @@
+.btn {
+  border: 1px solid var(--light-txt-color);
+  border-radius: 0;
+  font-size: 18px;
+}
+
+.btn-select {
+  width: 250px;
+}
+
+.btn-split {
+  background-color: var(--main-bg-color);
+  color: white;
+}

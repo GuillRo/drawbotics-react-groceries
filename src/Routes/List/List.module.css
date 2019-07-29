@@ -1,0 +1,15 @@
+.List {
+  height: 500px;
+  padding: 0 50px;
+  overflow: auto;
+}
+
+
+.List .lists {
+  display: flex;
+  color: var(--main-txt-color);
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  font-size: 22px;
+}

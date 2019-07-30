@@ -41,9 +41,11 @@ const List = (props) => {
 
 
   const saveInputAsItem = (itemName) => {
-    let newItems = _.cloneDeep(items)
-    newItems[itemName] = false
-    updateItems(newItems)
+    if (itemName.toString().length > 0) {
+      let newItems = _.cloneDeep(items)
+      newItems[itemName] = false
+      updateItems(newItems)
+    }
   }
 
   const completed = []

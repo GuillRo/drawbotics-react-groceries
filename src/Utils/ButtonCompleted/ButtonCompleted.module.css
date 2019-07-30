@@ -1,0 +1,11 @@
+.ButtonCompleted,
+.ButtonCompleted:hover {
+  background: inherit;
+  border: none;
+  text-decoration: none;
+  color: var(--main-txt-color);
+}
+
+.ButtonCompleted i {
+  margin: 0 6px;
+}

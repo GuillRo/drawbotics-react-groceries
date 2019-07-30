@@ -13,7 +13,8 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/login" component={Login} />
-          <Route path="/" exact component={List} />
+          {/* <Route path="/" exact component={List} /> */}
+          <Route path="/" exact render={(props) => <List {...props} name="test"/>}/>
         </Switch>
       </Layout>
     </div>

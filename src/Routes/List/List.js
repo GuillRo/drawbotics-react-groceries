@@ -21,22 +21,29 @@ const List = (props) => {
 
   const [showCompleted, setShowCompleted] = useState(true)
   const [items, setItems] = useState(JSON.parse(initialState()))
-  
-  
-  
+
+  const updateItems = (newItems) => {
+    localStorage.setItem(props.name, JSON.stringify(newItems))
+    setItems(newItems)
+  }
+
   const completedItemHandler = (item) => {
     const value = !items[item]
     let newItems = _.cloneDeep(items)
     newItems[item] = value
-    // localStorage.removeItem(props.name)
-    localStorage.setItem(props.name, JSON.stringify(newItems))
-    setItems(newItems)
-    // console.log(items)
+    updateItems(newItems)
   }
 
-  const completedButtonHandler= () => {
+  const completedButtonHandler = () => {
     const value = !showCompleted
     setShowCompleted(value)
+  }
+
+
+  const saveInputAsItem = (itemName) => {
+    let newItems = _.cloneDeep(items)
+    newItems[itemName] = false
+    updateItems(newItems)
   }
 
   const completed = []
@@ -60,20 +67,19 @@ const List = (props) => {
         </div>
         <div className={style['items-container']}>
           <div className={style['input-item']}>
-            <Input placeholder="Add new item" />
+            <Input
+              placeholder="Add new item"
+              save={(itemName) => { saveInputAsItem(itemName) }} />
           </div>
           <div className="items" id="pending-items">
             {pending}
           </div>
           <div className={style['completed']}>
-            {/* <ButtonLink customClass={style['btn-completed']} link="/">
-              Completed
-            <i className="fas fa-chevron-up active"></i>
-              <i className="fas fa-chevron-down"></i>
-            </ButtonLink> */}
-            <ButtonCompleted name="Completed" show={showCompleted} click={completedButtonHandler}/>
+            <ButtonCompleted
+              name="Completed"
+              show={showCompleted}
+              click={completedButtonHandler} />
           </div>
-
           <div className="items" id="completed-items">
             {completed}
           </div>

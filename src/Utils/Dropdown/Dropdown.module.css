@@ -20,3 +20,8 @@
   border: 1px solid var(--light-txt-color);
   border-radius: 0;
 }
+
+.dropdown-menu {
+  transform: translate(0px, 36px) !important;
+  margin: 6px 0;
+}

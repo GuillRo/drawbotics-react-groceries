@@ -4,16 +4,22 @@ import { ButtonToolbar, Dropdown, Button, ButtonGroup } from 'react-bootstrap'
 
 import style from './Dropdown.module.css'
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
+
+  const lists = []
+  Object.keys(JSON.parse(localStorage.getItem('lists'))).forEach((listName, index) => {
+    lists.push(<Dropdown.Item key={index+2} eventKey={(index+2).toString()}>{listName}</Dropdown.Item>)
+  })
+
+
   return (
     <ButtonToolbar>
       <Dropdown as={ButtonGroup}>
-        <Button className = {style['dropdown-split-left']} variant="">All</Button>
+        <Button className={style['dropdown-split-left']} variant="">{props.activeList}</Button>
         <Dropdown.Toggle className={style['dropdown-split-right']} variant="" split id="dropdown-custom-2" />
         <Dropdown.Menu>
-          <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-          <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-          <Dropdown.Item eventKey="3">Active Item</Dropdown.Item>
+          {/* <Dropdown.Item key="1" eventKey="1">All</Dropdown.Item> */}
+          {lists}
         </Dropdown.Menu>
       </Dropdown>
     </ButtonToolbar>

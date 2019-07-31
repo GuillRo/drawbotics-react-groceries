@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
 
-import ButtonLink from '../../Utils/ButtonLink/ButtonLink'
+// import ButtonLink from '../../Utils/ButtonLink/ButtonLink'
 import ButtonCompleted from '../../Utils/ButtonCompleted/ButtonCompleted'
 import DropdownMenu from '../../Utils/Dropdown/Dropdown'
 import Input from '../../Utils/Input/Input'
 import Item from '../../components/Item/Item'
 
 import style from './List.module.css'
+import ButtonModal from '../../Utils/ButtonModal/ButtonModal'
 
 const List = () => {
 
@@ -87,9 +88,7 @@ const List = () => {
       <div className={style.List}>
         <div className={style.nav}>
           <DropdownMenu activeList={activeList} changeList={(listName) => {loadItemsFromList(listName)}}/>
-          <ButtonLink
-            link="/"
-            customClass={style['add-list-button']} ><i className="fas fa-plus-circle"></i></ButtonLink>
+              <ButtonModal/>
         </div>
         <div className={style['items-container']}>
           <div className={style['input-item']}>

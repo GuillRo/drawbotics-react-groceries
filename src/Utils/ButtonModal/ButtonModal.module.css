@@ -1,0 +1,4 @@
+.ButtonModal,
+.ButtonModal:hover {
+  color: var(--main-txt-color);
+}

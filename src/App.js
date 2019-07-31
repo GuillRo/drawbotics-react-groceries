@@ -5,10 +5,9 @@ import Layout from './Layout/Layout'
 import List from './Routes/List/List'
 import Login from './Routes/Login/Login'
 
-import './App.css'
-
 function App() {
 
+// The state object is not a react state but just an object used to store data in the localStorage.
   const state = {
     lists: {
       'Christmas dinner': {
@@ -22,19 +21,7 @@ function App() {
       }
     },
     activeList: 'Christmas dinner'
-
   }
-  // const lists = {
-  //   'Christmas dinner': {
-  //     'Bread': false,
-  //     'Wine': true,
-  //     'Chicken': false
-  //   },
-  //   'Lunch snack': {
-  //     'Sandwich': true,
-  //     'Coca': false
-  //   }
-  // }
 
   if (!localStorage.getItem('lists')) {
     localStorage.setItem('lists', JSON.stringify(state.lists))

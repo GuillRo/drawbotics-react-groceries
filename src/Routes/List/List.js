@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
 
-// import ButtonLink from '../../Utils/ButtonLink/ButtonLink'
-import ButtonModal from '../../Utils/ButtonModal/ButtonModal'
+import ButtonModal from '../../components/ButtonModal/ButtonModal'
 import ButtonCompleted from '../../Utils/ButtonCompleted/ButtonCompleted'
 import DropdownMenu from '../../Utils/Dropdown/Dropdown'
 import Input from '../../Utils/Input/Input'
@@ -12,22 +11,18 @@ import style from './List.module.css'
 
 const List = () => {
 
-  // localStorage.getItem('activeList')
-
-  // const initialState = () => {
-  //   if (!localStorage.getItem(props.name)) {
-  //     const initalObject = { 'Bread': true, 'Wine': false, 'Vinegar': true, 'Meat': false }
-  //     localStorage.setItem(props.name, JSON.stringify(initalObject))
-  //   }
-  //   return localStorage.getItem(props.name)
-  // }
-
+  // activeList stores the active list (the one displayed in the dropdown)
+  // lists get the lists and their items from the localStorage.
   let activeList = JSON.parse(localStorage.getItem('activeList'))
   let lists = JSON.parse(localStorage.getItem('lists'))
 
+  // the hooks used by the app.
+  // showCompleted is used to show or hide the completed items.
+  // items is the state used for the items which will be displayed.
   const [showCompleted, setShowCompleted] = useState(true)
   const [items, setItems] = useState(lists[activeList])
 
+// updates the items state and the localStorage (when an item is set for completed to uncompleted for example).
   const updateItems = (newItems) => {
     let updatedLists = lists
     updatedLists[activeList] = newItems
@@ -35,6 +30,7 @@ const List = () => {
     setItems(newItems)
   }
 
+  // load the items for a specific list to display them.
   const loadItemsFromList = (listName) => {
     localStorage.setItem('activeList', JSON.stringify(listName))
     activeList = JSON.parse(localStorage.getItem('activeList'))
@@ -42,16 +38,7 @@ const List = () => {
     setItems(lists[activeList])
   }
 
-  // const rerenderTest = () => {
-  //   localStorage.setItem('activeList', JSON.stringify('Lunch snack'))
-  //   console.log(lists[activeList])
-  //   console.log(lists)
-  //   console.log(activeList)
-  //   activeList = JSON.parse(localStorage.getItem('activeList'))
-  //   lists = JSON.parse(localStorage.getItem('lists'))
-  //   setItems(lists[activeList])
-  // }
-
+  // change the value (hidden or shown) of a specific item.
   const completedItemHandler = (item) => {
     const value = !items[item]
     let newItems = _.cloneDeep(items)
@@ -59,12 +46,13 @@ const List = () => {
     updateItems(newItems)
   }
 
+  // change the showCompleted state (completed itemps will bi shown or hidden)
   const completedButtonHandler = () => {
     const value = !showCompleted
     setShowCompleted(value)
   }
 
-
+  // creates a new item with the received input
   const saveInputAsItem = (itemName) => {
     if (itemName.toString().length > 0) {
       let newItems = _.cloneDeep(items)
@@ -73,6 +61,7 @@ const List = () => {
     }
   }
 
+  // creates the arrays of the items according to their value (false for unchecked, true for checked)
   const completed = []
   const pending = []
   Object.keys(items).forEach((item, index) => {

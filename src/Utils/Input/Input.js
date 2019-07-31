@@ -10,7 +10,6 @@ const Input = (props) => {
     setValue(newValue)
   }
 
-
   return (
     <form className={style['add-item']}>
       <input

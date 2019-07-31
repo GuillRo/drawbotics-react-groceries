@@ -34,6 +34,13 @@ const List = () => {
     setItems(newItems)
   }
 
+  const loadItemsFromList = (listName) => {
+    localStorage.setItem('activeList', JSON.stringify(listName))
+    activeList = JSON.parse(localStorage.getItem('activeList'))
+    lists = JSON.parse(localStorage.getItem('lists'))
+    setItems(lists[activeList])
+  }
+
   // const rerenderTest = () => {
   //   localStorage.setItem('activeList', JSON.stringify('Lunch snack'))
   //   console.log(lists[activeList])
@@ -79,7 +86,7 @@ const List = () => {
     <>
       <div className={style.List}>
         <div className={style.nav}>
-          <DropdownMenu activeList={activeList} />
+          <DropdownMenu activeList={activeList} changeList={(listName) => {loadItemsFromList(listName)}}/>
           <ButtonLink
             link="/"
             customClass={style['add-list-button']} ><i className="fas fa-plus-circle"></i></ButtonLink>

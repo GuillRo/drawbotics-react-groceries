@@ -8,7 +8,7 @@ const DropdownMenu = (props) => {
 
   const lists = []
   Object.keys(JSON.parse(localStorage.getItem('lists'))).forEach((listName, index) => {
-    lists.push(<Dropdown.Item key={index+2} eventKey={(index+2).toString()}>{listName}</Dropdown.Item>)
+    lists.push(<Dropdown.Item key={index+1} eventKey={(index+1).toString()} onClick={(event) => {props.changeList(event.target.innerText)}}>{listName}</Dropdown.Item>)
   })
 
 

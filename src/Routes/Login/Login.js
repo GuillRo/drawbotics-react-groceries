@@ -9,8 +9,13 @@ const Login = () => {
   return (
     <div className={style.Login}>
       <div>
-        <Input placeholder="Login"/>
-        <Input placeholder="Password"/>
+        <Input
+          placeholder="Login"
+          save={(value) => {console.log(value)}}
+        />
+        <Input placeholder="Password" 
+          save={(value) => {console.log(value)}}
+        />
       </div>
       <div>
         <ButtonLink link="/" customClass={style.btn}>Sign in</ButtonLink>

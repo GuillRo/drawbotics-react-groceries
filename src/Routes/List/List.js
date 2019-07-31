@@ -9,23 +9,40 @@ import Item from '../../components/Item/Item'
 
 import style from './List.module.css'
 
-const List = (props) => {
+const List = () => {
 
-  const initialState = () => {
-    if (!localStorage.getItem(props.name)) {
-      const initalObject = { 'Bread': true, 'Wine': false, 'Vinegar': true, 'Meat': false }
-      localStorage.setItem(props.name, JSON.stringify(initalObject))
-    }
-    return localStorage.getItem(props.name)
-  }
+  // localStorage.getItem('activeList')
+
+  // const initialState = () => {
+  //   if (!localStorage.getItem(props.name)) {
+  //     const initalObject = { 'Bread': true, 'Wine': false, 'Vinegar': true, 'Meat': false }
+  //     localStorage.setItem(props.name, JSON.stringify(initalObject))
+  //   }
+  //   return localStorage.getItem(props.name)
+  // }
+
+  let activeList = JSON.parse(localStorage.getItem('activeList'))
+  let lists = JSON.parse(localStorage.getItem('lists'))
 
   const [showCompleted, setShowCompleted] = useState(true)
-  const [items, setItems] = useState(JSON.parse(initialState()))
+  const [items, setItems] = useState(lists[activeList])
 
   const updateItems = (newItems) => {
-    localStorage.setItem(props.name, JSON.stringify(newItems))
+    let updatedLists = lists
+    updatedLists[activeList] = newItems
+    localStorage.setItem('lists', JSON.stringify(updatedLists))
     setItems(newItems)
   }
+
+  // const rerenderTest = () => {
+  //   localStorage.setItem('activeList', JSON.stringify('Lunch snack'))
+  //   console.log(lists[activeList])
+  //   console.log(lists)
+  //   console.log(activeList)
+  //   activeList = JSON.parse(localStorage.getItem('activeList'))
+  //   lists = JSON.parse(localStorage.getItem('lists'))
+  //   setItems(lists[activeList])
+  // }
 
   const completedItemHandler = (item) => {
     const value = !items[item]
@@ -62,7 +79,7 @@ const List = (props) => {
     <>
       <div className={style.List}>
         <div className={style.nav}>
-          <DropdownMenu />
+          <DropdownMenu activeList={activeList} />
           <ButtonLink
             link="/"
             customClass={style['add-list-button']} ><i className="fas fa-plus-circle"></i></ButtonLink>

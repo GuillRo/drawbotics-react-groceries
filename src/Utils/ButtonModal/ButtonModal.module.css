@@ -1,0 +1,28 @@
+.ButtonModal,
+.ButtonModal:hover {
+  color: var(--main-txt-color);
+  background: inherit;
+  border: none;
+  text-decoration: none;
+}
+
+.Modal {
+  max-width: 300px !important;
+}
+
+.ModalBody,
+.ModalBody input {
+  text-align: center;
+}
+
+.ModalFooter {
+  text-align: center;
+  border-top: none;
+  justify-content: space-around;
+  padding-top: 0;
+}
+
+.btn-modal {
+  border-radius: 0;
+
+}

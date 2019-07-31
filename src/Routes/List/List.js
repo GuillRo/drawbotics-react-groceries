@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import _ from 'lodash'
 
-import ButtonLink from '../../Utils/ButtonLink/ButtonLink'
+// import ButtonLink from '../../Utils/ButtonLink/ButtonLink'
+import ButtonModal from '../../Utils/ButtonModal/ButtonModal'
 import ButtonCompleted from '../../Utils/ButtonCompleted/ButtonCompleted'
 import DropdownMenu from '../../Utils/Dropdown/Dropdown'
 import Input from '../../Utils/Input/Input'
@@ -86,10 +87,8 @@ const List = () => {
     <>
       <div className={style.List}>
         <div className={style.nav}>
-          <DropdownMenu activeList={activeList} changeList={(listName) => {loadItemsFromList(listName)}}/>
-          <ButtonLink
-            link="/"
-            customClass={style['add-list-button']} ><i className="fas fa-plus-circle"></i></ButtonLink>
+          <DropdownMenu activeList={activeList} changeList={(listName) => { loadItemsFromList(listName) }} />
+          <ButtonModal loadItems={(listName) => {loadItemsFromList(listName)}}/>
         </div>
         <div className={style['items-container']}>
           <div className={style['input-item']}>

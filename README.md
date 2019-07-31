@@ -13,6 +13,8 @@ A small express server is used for deployment.
 
 yarn build to build the app, then yarn start to launch the app on port 8080.
 
+Or just type yarn local to launch the development build on port 3000.
+
 
 ## Differences with vanilla JS version
 

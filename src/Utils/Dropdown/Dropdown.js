@@ -15,7 +15,7 @@ const DropdownMenu = (props) => {
       <Dropdown as={ButtonGroup}>
         <Button className={style['dropdown-split-left']} variant="">{props.activeList}</Button>
         <Dropdown.Toggle className={style['dropdown-split-right']} variant="" split id="dropdown-custom-2" />
-        <Dropdown.Menu>
+        <Dropdown.Menu className={style['dropdown-menu']}>
           {/* <Dropdown.Item key="1" eventKey="1">All</Dropdown.Item> */}
           {lists}
         </Dropdown.Menu>

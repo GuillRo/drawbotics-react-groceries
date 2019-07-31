@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Small pet project for front-end position at Drawbotics. 
+The app use React, React-bootstrap, and was made with create-react-app. It also uses hooks to handle state.
 
-## Available Scripts
+The components which use hooks are List.js, ButtonModal.js and Input.js.
 
-In the project directory, you can run:
+yarn start to launch the app.
 
-### `npm start`
+## Differences with vanilla JS version
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This version doesn't use Firebase but localStorage to store the items and lists.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Due to lack of time, this version is much simpler than the original. There is no multi-user authentication for example, even though there is a login page to mimic it. There is also no 'All' list, but you can still add lists and items.
 
-### `npm test`
+## Structure
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main file (app.js) creates some data in the localStorage and handle the layout of the app. The components are divided in 4 folders:
 
-### `npm run build`
+### `Layout`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This folder defines the layout of the app. There are 3 components : Layout, Header and Footer.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### `Routes`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This folder contains the differents routes of the app. There are two different routes: Login and List. Note that The login route is just a mock-up and not fully functionnal due to time restrictions. The lists component handles much of the features of the app. You can check the code for more documentation about the list component.
 
-### `npm run eject`
+### `components`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Contains the components related to the logic of the app. There are two components: Item (which, as the name implies, handles the diffrent items of the app), and buttonModal (which handles the creation of new lists through a modal).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Utils`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Contains the generic components. It contains ButtonCompleted (which handles the 'completed' button to show or hide the completed items), ButtonLink (which redirect to different routes when clicked), Input (the input elements, for the names of lists and items) and Dropdown (which display the different list in the localStorage).

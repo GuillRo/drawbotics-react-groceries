@@ -7,8 +7,7 @@ const Item = (props) => {
   let component = ''
   if (props.checked) {
     component = (
-      <label className={style.item}
-      >
+      <label className={style.item}>
         <p>{props.itemName}</p>
         <input
           onChange={props.click}
